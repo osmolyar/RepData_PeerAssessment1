@@ -20,7 +20,7 @@ intervalmeans<-tapply(activitydf$steps,activitydf$interval,mean,na.rm=TRUE)
 
 
 ## Imputing missing values
-lot(names(intervalmeans),intervalmeans,type="l")
-
+plot(names(intervalmeans),intervalmeans,type="l")
+which.max(intervalmeans)
 
 ## Are there differences in activity patterns between weekdays and weekends?
