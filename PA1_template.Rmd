@@ -8,19 +8,23 @@ output:
 
 ## Loading and preprocessing the data
 activitydf<-read.csv("activity/activity.csv")
-
+echo=TRUE
 
 ## What is mean total number of steps taken per day?
 totals<-tapply(activitydf$steps,activitydf$date,sum,na.rm=TRUE)
 hist(totals)
 mean(totals)
 median(totals)
+echo=TRUE
 ## What is the average daily activity pattern?
 intervalmeans<-tapply(activitydf$steps,activitydf$interval,mean,na.rm=TRUE)
+echo=TRUE
 
-
-## Imputing missing values
 plot(names(intervalmeans),intervalmeans,type="l")
 which.max(intervalmeans)
+echo=TRUE
+
+## Imputing missing values
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
